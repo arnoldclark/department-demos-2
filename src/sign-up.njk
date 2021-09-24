@@ -1,0 +1,48 @@
+---
+layout: base.njk
+---
+<div class="ch-container ch-mt--4">
+  <h1 class="ch-mb--4">Sign up for a demo</h1>
+
+  <form action="/" method="post">
+    <div class="ch-form__group">
+      <label class="ch-form__control-label">Department</label>
+      <div>
+        <input
+          id="department-digital"
+          type="radio"
+          name="department"
+          value="Digital"
+          class="ch-radio"
+        />
+        <label for="department-digital" class="ch-radio__label ch-radio__label--primary">
+          Digital
+        </label>
+        <input
+          id="department-marketing"
+          type="radio"
+          name="department"
+          value="Marketing"
+          class="ch-radio"
+        />
+        <label for="department-marketing" class="ch-ml--2 ch-radio__label ch-radio__label--primary">
+          Marketing
+        </label>
+      </div>
+    </div>
+    <div class="ch-form__group">
+      <label for="demo-name" class="ch-form__control-label">Name</label>
+      <input type="text" class="ch-form__control sm:ch-width--4" id="demo-name" />
+    </div>
+    <div class="ch-form__group">
+      <label for="demo-team" class="ch-form__control-label">Team</label>
+      <input type="text" class="ch-form__control sm:ch-width--4" id="demo-team" />
+    </div>
+    <div class="ch-form__group">
+      <label for="demo-topic" class="ch-form__control-label">Topic</label>
+      <textarea class="ch-form__control sm:ch-width--6" rows="5" id="demo-topic"></textarea>
+    </div>
+
+    <input type="submit" class="ch-btn ch-btn--success" value="Submit demo" />
+  </form>
+</div>
