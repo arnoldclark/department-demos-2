@@ -1,14 +1,22 @@
 import React, {Fragment} from 'react';
 import Demo from '../../Demo';
 
-const DigitalDemos = () => (
-  <Fragment>
-    <h2 class="ch-mv--4">Thursday, 1st October 2021</h2>
+const DigitalDemos = ({ demoDate, demos }) => {
+  return (
+    <Fragment>
+      <h2 className="ch-mv--4">{ demoDate }</h2>
 
-    <ol className="demo-timeline">
-      <Demo title="Demo 1" team="Sales Office" topic="This is my demo topic..." />
-      <Demo title="Demo 2" team="Aftersales" topic="This is my demo topic..." />
-    </ol>
-  </Fragment>
-)
+      {demos.length > 0 ?
+        <ol className="demo-timeline">
+          {demos.map((demo, i) =>
+            <Demo name={demo.data.name} team={demo.data.team} topic={demo.data.topic} />
+          )}
+        </ol>
+      :
+        <h3>No demos yet.</h3>
+      }
+    </Fragment>
+  )
+}
+
 export default DigitalDemos;
