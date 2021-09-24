@@ -4,7 +4,7 @@ layout: base.njk
 <div class="ch-container ch-mt--4">
   <h1 class="ch-mb--4">Sign up for a demo</h1>
 
-  <form action="/" method="post">
+  <form name="demo-sign-up" action="/thank-you" data-netlify-recaptcha="true" method="post" netlify>
     <div class="ch-form__group">
       <label class="ch-form__control-label">Department</label>
       <div>
@@ -32,16 +32,18 @@ layout: base.njk
     </div>
     <div class="ch-form__group">
       <label for="demo-name" class="ch-form__control-label">Name</label>
-      <input type="text" class="ch-form__control sm:ch-width--4" id="demo-name" />
+      <input type="text" name="name" class="ch-form__control sm:ch-width--4" id="demo-name" />
     </div>
     <div class="ch-form__group">
       <label for="demo-team" class="ch-form__control-label">Team</label>
-      <input type="text" class="ch-form__control sm:ch-width--4" id="demo-team" />
+      <input type="text" name="team" class="ch-form__control sm:ch-width--4" id="demo-team" />
     </div>
     <div class="ch-form__group">
       <label for="demo-topic" class="ch-form__control-label">Topic</label>
-      <textarea class="ch-form__control sm:ch-width--6" rows="5" id="demo-topic"></textarea>
+      <textarea name="topic" class="ch-form__control sm:ch-width--6" rows="5" id="demo-topic"></textarea>
     </div>
+
+    <div class="ch-form__group" data-netlify-recaptcha="true"></div>
 
     <input type="submit" class="ch-btn ch-btn--success" value="Submit demo" />
   </form>
