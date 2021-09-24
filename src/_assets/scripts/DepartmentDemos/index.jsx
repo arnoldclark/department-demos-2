@@ -1,11 +1,10 @@
 import React from 'react';
-import DigitalDemos from './DigitalDemos';
-import MarketingDemos from './MarketingDemos';
 import Demos from './Demos';
 import DemosData from '../../../_data/demos';
 
 class DepartmentDemos extends React.Component {
 	state = {
+    loading: true,
 		demos: [],
     digitalDemos: [],
     marketingDemos: [],
@@ -32,6 +31,7 @@ class DepartmentDemos extends React.Component {
     let marketingDemos = demos.filter(demo => demo.data.department === 'Marketing');
 
     this.setState({
+      loading: false,
       demos,
       digitalDemos,
       marketingDemos
@@ -68,7 +68,7 @@ class DepartmentDemos extends React.Component {
             <button className={`ch-tab ${this.state.activeTab === 'marketing' && `ch-tab--selected`}`} data-hook="dd-tab" onClick={() => this.setActiveTab('marketing')}>Marketing</button>
           </div>
           <div className="dd-tabs__tabs" data-hook="dd-tabs-content">
-            { this.state.demos.length > 0 ? this.renderTabs() : <h2 class="ch-mv--4">Loading demos...</h2> }
+            { this.state.loading ? <h2 className="ch-mv--4">Loading demos...</h2> : this.renderTabs() }
           </div>
         </div>
       </div>
