@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import Demo from '../../Demo';
+import Demo from './Demo';
 
 const DigitalDemos = ({ demoDate, demos }) => {
   return (
@@ -9,7 +9,7 @@ const DigitalDemos = ({ demoDate, demos }) => {
       {demos.length > 0 ?
         <ol className="demo-timeline">
           {demos.map((demo, i) =>
-            <Demo name={demo.data.name} team={demo.data.team} topic={demo.data.topic} />
+            <Demo key={i} name={demo.data.name} team={demo.data.team} topic={demo.data.topic} />
           )}
         </ol>
       :

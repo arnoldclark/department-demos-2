@@ -1,6 +1,7 @@
 import React from 'react';
 import DigitalDemos from './DigitalDemos';
 import MarketingDemos from './MarketingDemos';
+import Demos from './Demos';
 import DemosData from '../../../_data/demos';
 
 class DepartmentDemos extends React.Component {
@@ -51,10 +52,10 @@ class DepartmentDemos extends React.Component {
   renderTabs = () => {
     switch (this.state.activeTab) {
       case 'marketing':
-        return <MarketingDemos demoDate={this.state.marketingDemoDate} demos={this.state.marketingDemos} />
+        return <Demos demoDate={this.state.marketingDemoDate} demos={this.state.marketingDemos} />
       break;
       default:
-        return <DigitalDemos demoDate={this.state.digitalDemoDate} demos={this.state.digitalDemos} />
+        return <Demos demoDate={this.state.digitalDemoDate} demos={this.state.digitalDemos} />
     }
   }
 
