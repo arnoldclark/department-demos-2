@@ -1,6 +1,8 @@
 import React from 'react';
 import Demos from './Demos';
 import DemosData from '../../../_data/demos';
+const NetlifyAPI = require('netlify');
+const client = new NetlifyAPI('tO4k0YcHpuAEeuNiveE6jNKbh7Giavz6_geodno8w_U')
 
 class DepartmentDemos extends React.Component {
 	state = {
@@ -18,12 +20,11 @@ class DepartmentDemos extends React.Component {
     this.getDemoSubmissions();
   }
 
-  getDemoSubmissions = () => {
-    fetch('https://v1.nocodeapi.com/jamiecassidyac/netlify/DxypIElQosvamZrs/listFormSubmissions?form_id=614da39732998100087fca4c', {
-      method: 'GET'
-    })
-      .then(res => res.json())
-      .then(demos => this.setDemos(demos))
+  getDemoSubmissions = async () => {
+    const demos = await client.listFormSubmissions({
+      form_id: '614da39732998100087fca4c'
+    });
+    this.setDemos(demos);
   }
 
   setDemos = demos => {
