@@ -2,7 +2,7 @@ import React from 'react';
 import Demos from './Demos';
 import DemosData from '../../../_data/demos';
 const NetlifyAPI = require('netlify');
-const client = new NetlifyAPI('tO4k0YcHpuAEeuNiveE6jNKbh7Giavz6_geodno8w_U')
+const client = new NetlifyAPI('2p3FEC9ojSFnlBaAALvoidGSHJkCX0SxJQjK9fQBSC4')
 
 class DepartmentDemos extends React.Component {
 	state = {
@@ -22,7 +22,7 @@ class DepartmentDemos extends React.Component {
 
   getDemoSubmissions = async () => {
     const demos = await client.listFormSubmissions({
-      form_id: '614da39732998100087fca4c'
+      form_id: '6151c3201c035d000797ede5'
     });
     this.setDemos(demos);
   }
