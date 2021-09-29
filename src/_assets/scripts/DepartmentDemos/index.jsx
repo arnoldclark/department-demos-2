@@ -28,8 +28,8 @@ class DepartmentDemos extends React.Component {
   }
 
   setDemos = demos => {
-    let digitalDemos = demos.filter(demo => demo.data.department === 'Digital');
-    let marketingDemos = demos.filter(demo => demo.data.department === 'Marketing');
+    let digitalDemos = demos.filter(demo => demo.data.department === 'Digital').reverse();
+    let marketingDemos = demos.filter(demo => demo.data.department === 'Marketing').reverse();
 
     this.setState({
       loading: false,
