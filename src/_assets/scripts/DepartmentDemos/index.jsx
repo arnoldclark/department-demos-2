@@ -50,26 +50,12 @@ class DepartmentDemos extends React.Component {
     });
   }
 
-  renderTabs = () => {
-    switch (this.state.activeTab) {
-      case 'marketing':
-        return <Demos demoDate={this.state.marketingDemoDate} demos={this.state.marketingDemos} />
-      break;
-      default:
-        return <Demos demoDate={this.state.digitalDemoDate} demos={this.state.digitalDemos} />
-    }
-  }
-
 	render() {
     return (
       <div className="ch-bg--white ch-rounded ch-ba--1 ch-bc--grey-3 ch-shadow--sm">
         <div className="ch-card__content">
-          <div className="ch-bb--1 ch-bc--grey-3">
-            <button className={`ch-tab ${this.state.activeTab === 'digital' && `ch-tab--selected`}`} data-hook="dd-tab" onClick={() => this.setActiveTab('digital')}>Digital</button>
-            <button className={`ch-tab ${this.state.activeTab === 'marketing' && `ch-tab--selected`}`} data-hook="dd-tab" onClick={() => this.setActiveTab('marketing')}>Marketing</button>
-          </div>
           <div className="dd-tabs__tabs" data-hook="dd-tabs-content">
-            { this.state.loading ? <h2 className="ch-mv--4">Loading demos...</h2> : this.renderTabs() }
+            { this.state.loading ? <h2 className="ch-mv--4">Loading demos...</h2> : <Demos demoDate={this.state.marketingDemoDate} demos={this.state.marketingDemos} /> }
           </div>
         </div>
       </div>
