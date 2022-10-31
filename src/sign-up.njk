@@ -5,14 +5,7 @@ layout: base.njk
   <h1 class="ch-mb--4">Sign up for a demo</h1>
 
   <form name="demo-sign-up" action="/thank-you" data-netlify-recaptcha="true" method="post" netlify>
-    <div class="ch-form__group">
-      <label class="ch-form__control-label" for="demo-department">Department</label>
-      <select name="department" id="demo-department" class="ch-form__control sm:ch-width--4" required>
-        <option value="">Choose an option</option>
-        <option value="Digital">Digital</option>
-        <option value="Marketing">Marketing</option>
-      </select>
-    </div>
+    <input type="hidden" name="department" value="Marketing" id="demo-department" />
     <div class="ch-form__group">
       <label for="demo-name" class="ch-form__control-label">Name</label>
       <input type="text" name="name" class="ch-form__control sm:ch-width--4" id="demo-name" required />
