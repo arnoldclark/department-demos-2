@@ -1,4 +1,4 @@
 module.exports = {
 	digitalDemoDate: 'Wednesday, 20th December @ 9:30am',
-	marketingDemoDate: 'Friday, 23rd January @ 2.00pm'
+	marketingDemoDate: 'Friday, 26th Febuary @ 2.00pm'
 }
